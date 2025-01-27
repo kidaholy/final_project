@@ -3,6 +3,7 @@ import axios from "axios";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -11,9 +12,16 @@ const Login = () => {
         "http://localhost:5000/api/auth/login",
         { email, password }
       );
+      if (response.data.success) {
+        alert("Successfully logged in")
+      }
       console.log(response);
     } catch (error) {
-      console.log(error);
+      if(error.response && !error.response.data.success) {
+        setError(error.response.data.error)
+      } else {
+        setError("Server Error")
+      }
     }
   };
   return (
@@ -26,7 +34,7 @@ const Login = () => {
           </h2>
           <div className="border shadow p-6 w-80 bg-white rounded-lg">
             <h2 className="text-2xl font-bold mb-4 text-center">Login</h2>
-            {/* {error && <p className="text-red-600">{error}</p>} */}
+            {error && <p className="text-red-600">{error}</p>}
             <form onSubmit={handleSubmit}>
               <div className="mb-4">
                 <label htmlFor="email" className="block text-gray-700">
