@@ -39,6 +39,7 @@ const Login = () => {
                   placeholder="Enter Email"
                   className="w-full px-3 py-2 border rounded"
                   required
+                  autoComplete="email-required"
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
@@ -52,6 +53,7 @@ const Login = () => {
                   placeholder="********"
                   className="w-full px-3 py-2 border rounded"
                   required
+                  autoComplete="password-required"
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
