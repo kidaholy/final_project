@@ -40,7 +40,7 @@ const Login = () => {
     <div className="relative flex flex-col items-center justify-center h-screen bg-cover bg-center" style={{ backgroundImage: "url('/wolkite-uni.png')" }}>
       <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
       <div className="relative z-10 flex flex-col items-center justify-center space-y-6">
-        <img className="w-28 object-fit animate-bounce" src="/wolkite.png" alt="logo" />
+        <img className="w-28 object-fit animate-pulse" src="/wolkite.png" alt="logo" />
         <div className="border shadow-lg p-8 w-96 bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg rounded-lg animate-slide-in">
           <h2 className="text-3xl font-bold mb-6 text-center text-white">Login</h2>
           {error && <p className="text-red-600 mb-4">{error}</p>}
@@ -80,7 +80,7 @@ const Login = () => {
                   className="form-checkbox"
                   id="remember"
                 />
-                <span className="ml-2 text-gray-700">Remember me</span>
+                <span className="ml-2 text-white">Remember me</span>
               </label>
               <a href="#" className="text-white hover:underline">
                 Forgot password?
@@ -89,7 +89,7 @@ const Login = () => {
             <div className="mb-6">
               <button
                 type="submit"
-                className="w-full bg-teal-600 text-white py-3 rounded hover:bg-teal-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-teal-600"
+                className="w-full bg-blue-900 text-white py-3 rounded hover:bg-blue-700 transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-600"
               >
                 Login
               </button>
