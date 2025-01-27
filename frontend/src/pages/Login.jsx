@@ -1,6 +1,5 @@
-import axios from "axios";
 import { useState } from "react";
-
+import axios from "axios";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -12,7 +11,7 @@ const Login = () => {
         "http://localhost:5000/api/auth/login",
         { email, password }
       );
-      console.log(response)
+      console.log(response);
     } catch (error) {
       console.log(error);
     }
