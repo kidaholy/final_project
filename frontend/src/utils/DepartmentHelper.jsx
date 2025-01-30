@@ -15,9 +15,9 @@ export const columns = [
 
 export const DepartmentButtons = () => {
     return (
-        <div>
-            <button>Edit</button>
-            <button>Delete</button>
+        <div className="flex space-x-3">
+            <button className="px-3 py-1 bg-teal-600 text-white">Edit</button>
+            <button className="px-3 py-1 bg-red-600 text-white">Delete</button>
         </div>
     )
 }
