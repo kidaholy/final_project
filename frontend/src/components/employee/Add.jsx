@@ -1,7 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { StyleSheetContext } from "styled-components";
+import { fetchDepartments } from "../../utils/EmployeeHelper";
 
 const Add = () => {
+  const [departments, setDepartments] = useState([]);
+  useEffect(() => {
+    const getDepartments = async () => {
+      const departments = await fetchDepartments();
+      setDepartments(departments);
+    };
+    getDepartments()
+  }, []);
+
   return (
     <div className="max-w-4xl mx-auto mt-10 bg-white p-8 rounded-md shadow-md">
       <h2 className="text-2xl font-bold mb-6">Add New Employee</h2>
@@ -117,6 +127,9 @@ const Add = () => {
               required
             >
               <option value="">select Department</option>
+              {departments.map((dep) => (
+                <option key={dep._id} value={dep._id}>{dep.dep_name}</option>
+              ))}
             </select>
           </div>
 
