@@ -28,8 +28,8 @@ const List = () => {
             sno: sno++,
             dep_name: emp.department?.dep_name || <strong>NULL</strong>,
             name: emp.userId?.name || <strong>NULL</strong>,
-            dob: emp.dob ? new Date(emp.dob).toDateString() : <strong>NULL</strong>,
-            profileImage: <img src={`http://localhost:5001/${emp.userId?.profileImage}`} width={40} height={40} className="rounded-full" /> || <strong>NULL</strong>,
+            dob: emp.dob ? new Date(emp.dob).toLocaleDateString() : <strong>NULL</strong>,
+            profileImage: <img src={`http://localhost:5000/${emp.userId?.profileImage}`} width={40} height={40} className="rounded-full" /> || <strong>NULL</strong>,
             action: <EmployeeButtons _id={emp._id} />,
           }));
           setEmployees(data);

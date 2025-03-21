@@ -33,6 +33,7 @@ export const columns = [
     name: "Actions",
     selector: (row) => row.action,
     width: "300px",
+    center: 'true',
   },
 ];
 
