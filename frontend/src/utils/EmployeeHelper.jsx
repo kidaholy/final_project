@@ -57,14 +57,15 @@ export const fetchDepartments = async () => {
 };
 
 export const EmployeeButtons = ({ _id }) => {
+  const navigate = useNavigate();
   return (
-    <div className="flex gap-2">
-      <Link
-        to={`/admin-dashboard/employees/${_id}`}
+    <div className="flex space-x-3">
+      <button
+        onClick={() => navigate(`/admin-dashboard/employees/${_id}`)}
         className="px-3 py-1 bg-teal-500 text-white hover:bg-red-600"
       >
         View
-      </Link>
+      </button>
       <button className="px-3 py-1 bg-blue-500 text-white rounded hover:bg-red-600">
         Edit
       </button>
