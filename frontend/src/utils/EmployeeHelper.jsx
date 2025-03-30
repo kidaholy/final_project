@@ -33,7 +33,7 @@ export const columns = [
     name: "Actions",
     selector: (row) => row.action,
     width: "300px",
-    center: 'true',
+    center: "true",
   },
 ];
 
@@ -66,7 +66,10 @@ export const EmployeeButtons = ({ _id }) => {
       >
         View
       </button>
-      <button className="px-3 py-1 bg-blue-500 text-white rounded hover:bg-red-600">
+      <button
+        onClick={() => navigate(`/admin-dashboard/employees/edit/${_id}`)}
+        className="px-3 py-1 bg-blue-500 text-white rounded hover:bg-red-600"
+      >
         Edit
       </button>
       <button className="px-3 py-1 bg-yellow-500 text-white rounded hover:bg-red-600">
