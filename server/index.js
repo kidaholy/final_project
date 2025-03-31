@@ -3,6 +3,7 @@ import cors from 'cors';
 import authRouter from "./routes/auth.js"
 import departmentRouter from "./routes/department.js"
 import employeeRouter from "./routes/employee.js"
+import salaryRouter from "./routes/salary.js"
 import connectToDatabase from './db/db.js';
 
 connectToDatabase();
@@ -13,6 +14,7 @@ app.use("/api/auth", authRouter)
 app.use(express.static('public/uploads'));
 app.use("/api/departments", departmentRouter)
 app.use("/api/employees", employeeRouter)
+app.use("/api/salary", salaryRouter)
 app.listen(process.env.PORT, () => {
     console.log('listening on port ' + process.env.PORT);
 });
