@@ -33,7 +33,7 @@ export const columns = [
     name: "Actions",
     selector: (row) => row.action,
     width: "300px",
-    center: "true",
+    center: true,
   },
 ];
 
@@ -54,6 +54,27 @@ export const fetchDepartments = async () => {
     }
   }
   return departments;
+};
+
+// employees for salary form
+
+export const getEmployees = async (id) => {
+  let employees;
+  try {
+    const response = await axios.get(`http://localhost:5000/api/employees/department/${id}`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    });
+    if (response.data.success) {
+      employees = response.data.employees;
+    }
+  } catch (error) {
+    if (error.response && !error.response.data.success) {
+      console.log(error.response.data.error);
+    }
+  }
+  return employees;
 };
 
 export const EmployeeButtons = ({ _id }) => {

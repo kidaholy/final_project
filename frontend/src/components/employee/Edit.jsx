@@ -159,7 +159,7 @@ const Edit = () => {
 
               {/* Department */}
               <div className="col-span-2">
-                <label className="block text-sm font-medium text-gray-700"></label>
+                <label className="block text-sm font-medium text-gray-700">Department</label>
                 <select
                   type="text"
                   name="department"
