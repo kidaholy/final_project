@@ -13,6 +13,7 @@ import Add from "./components/employee/Add.jsx"
 import View from "./components/employee/View.jsx";
 import Edit from "./components/employee/Edit.jsx";
 import AddSalary from "./components/salary/AddSalary.jsx";
+import ViewSalary from "./components/salary/ViewSalary.jsx";
 
 function App() {
   return (
@@ -63,6 +64,10 @@ function App() {
           <Route
             path="/admin-dashboard/salary/add"
             element={<AddSalary />}
+          ></Route>
+          <Route
+            path="/admin-dashboard/employees/salary/:id"
+            element={<ViewSalary />}
           ></Route>
         </Route>
 
